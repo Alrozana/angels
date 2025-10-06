@@ -598,12 +598,10 @@ ul.wja-list li {
   .wja-visual{
     min-height: 250px;
   }
-  
   .wja-bars{
     inset: 15px;
     gap: 6px;
   }
-  
   .wja-bar{
     max-width: 20px;
   }
