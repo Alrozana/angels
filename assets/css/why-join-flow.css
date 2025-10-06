@@ -27,7 +27,10 @@ body.wja-sandbox{
   display:flex;
   align-items:center;
 }
-
+.wja-mini {
+  flex-direction: column;
+  align-items: flex-start;
+}
 
 .wja-whyjoin::before{
   content:"";
@@ -270,7 +273,7 @@ body.wja-sandbox{
 .wja-mini{
   margin-top:40px;
   display:flex;
-  align-items:center;
+  align-items: flex-start;
   gap:20px;
   flex-wrap:wrap;
 }
@@ -538,8 +541,27 @@ body.wja-sandbox{
   .wja-grid{gap:40px}
   .wja-kicker{padding:10px 20px;font-size:13px}
   .wja-tab{padding:12px 20px;font-size:14px}
-  .wja-mini{flex-direction:column;align-items:flex-start}
+  .wja-mini {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
   
+  /* إصلاح مشكلة الأزرار في الموبايل */
+  .wja-mini div[style*="display:flex"]:last-child {
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  
+  .wja-flow {
+    width: 100% !important;
+    text-align: center;
+    justify-content: center;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   /* إصلاحات للموبايل */
   .wja-visual{
     width: 100%;
@@ -597,6 +619,20 @@ ul.wja-list li {
   .wja-mini{
     margin-top: 30px;
     gap: 15px;
+  }
+  
+  /* تأكد من أن الأزرار تاخد كامل العرض في الشاشات الصغيرة */
+  .wja-mini div[style*="display:flex"]:last-child {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+  
+  .wja-flow {
+    font-size: 14px !important;
+    padding: 12px 20px !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+    text-align: center !important;
   }
 }
 
