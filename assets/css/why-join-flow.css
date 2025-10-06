@@ -546,11 +546,13 @@ body.wja-sandbox{
     align-items: stretch !important;
   }
   
-  /* إصلاح مشكلة الأزرار في الموبايل */
-  .wja-mini div[style*="display:flex"]:last-child {
+  /* إصلاح مشكلة الأزرار في الموبايل - استهداف أقوى للـ inline styles */
+  .wja-mini > div[style*="display:flex"][style*="gap:10px"][style*="align-items:center"] {
+    display: flex !important;
     flex-direction: column !important;
     gap: 12px !important;
     width: 100% !important;
+    align-items: stretch !important;
   }
   
   .wja-flow {
@@ -619,10 +621,12 @@ ul.wja-list li {
     gap: 15px;
   }
   
-  /* تأكد من أن الأزرار تاخد كامل العرض في الشاشات الصغيرة */
-  .wja-mini div[style*="display:flex"]:last-child {
+  /* تأكد من أن الأزرار تاخد كامل العرض في الشاشات الصغيرة - استهداف أدق */
+  .wja-mini > div[style*="display:flex"][style*="gap:10px"][style*="align-items:center"] {
+    display: flex !important;
     flex-direction: column !important;
     gap: 15px !important;
+    align-items: stretch !important;
   }
   
   .wja-flow {
