@@ -522,3 +522,12 @@
         font-size: 20px;
     }
 }
+.success-cta-btn span,
+.success-cta-btn i {
+  position: relative;
+  z-index: 2; /* يخلي النص والآيقونة فوق أي ::after */
+}
+
+.success-cta-btn:visited {
+  color: var(--color-white); /* يضل أبيض حتى بعد الكليك */
+}

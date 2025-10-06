@@ -138,6 +138,24 @@
     cursor: pointer;
     min-height: 200px;
 }
+/* شريط التطريز على يمين الكارد */
+
+.vm-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;  /* جهة اليمين */
+  width: 40px;    /* عرض الزخرفة - عدل حسب حجم الصورة */
+  height: 100%;
+  background: 
+    linear-gradient(to right, rgba(255,255,255,0.9), rgba(255,255,255,.2)), /* overlay */
+    url("../images/pal.png") repeat-y right center; /* صورة التطريز */
+  background-size: 100% auto; /* يضبط التكرار */
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  mix-blend-mode: multiply;   /* يخليها تتماها مع الخلفية */
+  opacity: 0.9;               /* كمان بيلطف الشكل */
+}
 
 .vm-card::before {
     content: '';
@@ -390,21 +408,23 @@
 }
 
 .vm-card-list li {
-    display: flex;
+    display: inline-flex;        /* ياخد حجم النص فقط */
     align-items: flex-start;
-    margin-bottom: 15px;
+    margin-bottom: 12px;         /* مسافة بين العناصر */
     font-size: var(--font-size-b1);
     line-height: 1.6;
     color: var(--color-body);
     font-weight: var(--p-medium);
-    padding: 12px 15px;
+    padding: 8px 14px;           /* فراغ داخلي حوالين النص */
     background: #f8fafc;
     border-radius: 8px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 1px solid rgba(0, 132, 120, 0.1);
     transform: translateX(0);
     opacity: 1;
+    max-width: fit-content;      /* يمنع التمدد */
 }
+
 
 .vm-card-list li:nth-child(1) { animation-delay: 0.1s; }
 .vm-card-list li:nth-child(2) { animation-delay: 0.2s; }

@@ -21026,3 +21026,8 @@ body.loaded {
     display: block !important;
   }
 }
+.about-thumbnails img {
+    box-shadow: none !important;   /* يلغي أي ظل */
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); /* خيار: تعمل ظل خفيف وناعم */
+    border-radius: 15px; /* يخلي الأطراف ناعمة متماشية مع الصورة */
+}

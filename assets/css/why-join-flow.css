@@ -565,7 +565,10 @@ body.wja-sandbox{
     padding-right: 5px;
   }
 }
-
+ul.wja-list li {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 /* إضافة media query إضافي للشاشات الصغيرة جداً */
 @media (max-width:480px){
   .wja-container{padding:0 15px}
