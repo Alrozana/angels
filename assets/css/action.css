@@ -1,0 +1,238 @@
+:root{
+  --xcta-primary: var(--color-primary, #008478);
+  --xcta-blue:    var(--color-heading, #0B416C); 
+  --xcta-body:    var(--color-body, #334155);
+  --xcta-white:   var(--color-white, #ffffff);
+  --xcta-border:  var(--color-border-white, rgba(255,255,255,.22));
+}
+
+.xcta {
+  position: relative;
+  padding: clamp(48px, 6vw, 80px) 0;
+  background: var(--xcta-blue);
+  color: var(--xcta-white);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* الزخرفة من فوق */
+.xcta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 22px; /* سماكة الزخرفة */
+  background: url("../images/Tat2.png") repeat-x center top;
+  background-size: auto 100%; /* خليها تاخد الارتفاع بالكامل */
+  pointer-events: none;
+}
+
+/* الزخرفة من تحت */
+.xcta::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 22px;
+  background: url("../images/Tat2.png") repeat-x center bottom;
+  background-size: auto 100%;
+  pointer-events: none;
+  transform: scaleY(-1);   /* ✅ يقلب الصورة رأسياً */
+}
+
+@keyframes xcta-scan { from{transform:translateX(0)} to{transform:translateX(-90px)} }
+
+.xcta-circles{
+  position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden;
+}
+.xcta-circles span{
+  position:absolute; border-radius:50%;
+  background: rgba(255,255,255,.06);
+  filter: blur(.2px);
+  will-change: transform, opacity;
+  animation: xcta-float 18s ease-in-out infinite alternate;
+}
+.xcta-circles .c1{ width:180px; height:180px; top:8%; left:6%;  animation-duration: 20s; }
+.xcta-circles .c2{ width:240px; height:240px; bottom:10%; right:8%; background: rgba(0,132,120,.08); animation-duration: 24s; animation-delay: .6s; }
+.xcta-circles .c3{ width:140px; height:140px; top:50%; left:60%; animation-duration: 22s; animation-delay: .2s; }
+@keyframes xcta-float {
+  0%   { transform: translateY(0) translateX(0) scale(1);   opacity:.7; }
+  100% { transform: translateY(-24px) translateX(10px) scale(1.06); opacity:.95; }
+}
+
+.xcta-container{ width:min(1200px, 92vw); margin:0 auto; position:relative; z-index:2; }
+.xcta-grid{
+  display:grid; gap: clamp(20px, 4vw, 40px);
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items:center;
+}
+@media (max-width: 992px){ .xcta-grid{ grid-template-columns: 1fr; } }
+
+.xcta-media{
+  position:relative; border-radius: 20px; overflow:hidden;
+  min-height: 360px;
+  border: 1px solid var(--xcta-border);
+  background: rgba(255,255,255,.1);
+}
+.xcta-img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  transform: translateY(0); will-change: transform;
+}
+.xcta-pattern{
+  position:absolute; inset:0; z-index:1; opacity:.16; pointer-events:none;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.55) 0 1px, transparent 1px 16px);
+  mix-blend-mode: screen;
+  animation: xcta-shift 20s linear infinite;
+}
+@keyframes xcta-shift { from{ transform:translateX(0)} to{ transform:translateX(-80px)} }
+
+.xcta-tagline{
+  position:absolute; left:14px; bottom:14px; z-index:2;
+  padding: 10px 14px; border-radius: 12px;
+  border: 1px solid var(--xcta-border);
+  color: var(--xcta-blue);
+  background: linear-gradient(90deg, rgba(255,255,255,.95), rgba(255,255,255,.75));
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  font-weight:900; letter-spacing:.2px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.15);
+  will-change: transform;
+}
+
+.xcta-title{
+  margin:0 0 10px;
+  font-size: clamp(28px, 4.6vw, 44px);
+  font-weight: 900;
+  line-height: 1.12;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0,0,0,.22);
+  opacity:1; transform: translateY(10px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.xcta-sub{
+  margin: 0 0 20px;
+  color: rgba(255,255,255,.92);
+  font-size: clamp(16px, 1.6vw, 18px);
+  line-height: 1.65;
+  max-width: 48ch;
+  opacity:1; transform: translateY(10px);
+  transition: opacity .6s ease .06s, transform .6s ease .06s;
+}
+
+/* ✅ زر CTA */
+.xcta-btn {
+  position: relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content: center;
+  gap:10px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 900;
+  background: var(--xcta-primary);
+  border: 2px solid var(--xcta-primary);
+  color: #fff;   /* النص أبيض صافي */
+  box-shadow: 0 12px 28px rgba(0,0,0,.18);
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+
+/* الخلفية بالصورة + gradient خفيف جداً - تأثير الارتفاع من الأسفل */
+.xcta-btn::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;           /* يبدأ مخفي */
+  border-radius: inherit;
+  background-image: 
+    linear-gradient(rgba(11, 65, 108, 0.1), rgba(11, 65, 108, 0.1)), 
+    url("../images/bu.png");
+  background-size: contain;
+  background-repeat: repeat-x;
+  background-position: center;
+  transition: height 0.4s ease;
+  z-index: 0;          /* تحت النص */
+}
+
+/* النصوص فوق */
+.xcta-btn span,
+.xcta-btn i {
+  position: relative;
+  z-index: 2;   /* 👈 النص والآيقونة فوق */
+  color: #fff !important;
+}
+
+
+/* عند hover يرتفع التأثير من الأسفل للأعلى */
+.xcta-btn:hover::before {
+  height: 100%;
+}
+
+/* ضمان النص أبيض دائماً مع ظل قوي جداً */
+.xcta-btn:hover span,
+.xcta-btn:hover i,
+.xcta-btn:hover .xcta-btn__text,
+.xcta-btn:hover .xcta-btn__icon {
+  color: #fff !important;
+  text-shadow: 
+    0 0 10px rgba(0,0,0,1), 
+    0 0 20px rgba(0,0,0,0.8), 
+    0 2px 4px rgba(0,0,0,0.9),
+    0 4px 8px rgba(0,0,0,0.7) !important;
+  font-weight: 900 !important;
+  filter: drop-shadow(0 0 3px rgba(0,0,0,0.9)) !important;
+}
+
+.xcta-btn:hover { 
+  transform: translateY(-2px); 
+  box-shadow: 0 16px 32px rgba(0,0,0,.24); 
+  color: #fff !important; 
+}
+
+.xcta-btn::after{
+  content:""; 
+  position:absolute; 
+  inset:-6px; 
+  border-radius:16px;
+  border:2px solid rgba(255,255,255,0);
+  pointer-events:none;
+  animation: xcta-ring 5s ease-in-out infinite;
+}
+
+.xcta-btn__icon{ 
+  display:inline-grid; 
+  place-items:center; 
+  width:22px; 
+  height:22px; 
+  border-radius:50%; 
+  background: rgba(255,255,255,.18); 
+  font-size:12px;
+  z-index:2;
+}
+.xcta-btn__text{ 
+  white-space: nowrap; 
+  z-index:2;
+}
+
+@keyframes xcta-ring  { 
+  0%,80%{border-color:rgba(255,255,255,0); transform:scale(1); opacity:0}
+  86%{border-color:rgba(255,255,255,.40); transform:scale(1.06); opacity:1}
+  96%,100%{border-color:rgba(255,255,255,0); transform:scale(1.12); opacity:0} 
+}
+
+.xcta.is-in .xcta-title,
+.xcta.is-in .xcta-sub,
+.xcta.is-in .xcta-btn{ opacity:1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce){
+  .xcta::before, .xcta-pattern, .xcta-btn, .xcta-btn::after, .xcta-circles span{ animation: none !important; }
+  [data-xcta-parallax]{ transform: none !important; }
+  .xcta-title, .xcta-sub, .xcta-btn{ opacity:1 !important; transform:none !important; transition:none !important; }
+}

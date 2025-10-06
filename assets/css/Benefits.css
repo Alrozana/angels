@@ -1,0 +1,611 @@
+
+
+
+
+
+.benefits-cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+/* 4 كاردز في الصف على الشاشات >= 992px */
+@media (min-width: 992px) {
+  .benefits-cards-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.benefit-flip-card {
+    perspective: 1200px;
+    height: 240px;
+    position: relative;
+}
+
+
+.benefit-card-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+
+.benefit-flip-card:hover .benefit-card-wrapper {
+    transform: rotateY(180deg);
+}
+
+
+.benefit-flip-card.mobile-flipped .benefit-card-wrapper {
+    transform: rotateY(180deg);
+}
+
+
+.benefit-card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 20px;
+}
+
+
+.benefit-front-face {
+    background: var(--color-white);
+    text-align: center;
+}
+
+
+.benefit-icon-container {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.benefit-icon-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--color-primary);
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+
+
+.benefit-icon {
+    font-size: 40px;
+    color: var(--color-white);
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+
+.benefit-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+}
+
+
+.benefit-hover-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.hover-text {
+    font-size: 14px;
+    color: var(--color-body);
+    font-weight: 500;
+}
+
+.hover-arrow {
+    font-size: 12px;
+    color: var(--color-primary);
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+
+.benefit-back-face {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    transform: rotateY(180deg);
+    border-color: var(--color-white);
+    justify-content: flex-start;
+    text-align: left;
+    padding: 30px 25px;
+}
+
+
+.benefit-details {
+    width: 100%;
+}
+
+.benefit-back-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    color: var(--color-white);
+}
+
+.benefit-description {
+    color: #40B7CF;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+
+.benefit-features {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom:0px;
+}
+
+.feature-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--color-white);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.feature-text {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+
+.benefit-flip-card:hover .benefit-front-face {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-flip-card:hover .benefit-icon-bg {
+    background: var(--color-secondary);
+    transform: scale(1.1);
+}
+
+.benefit-flip-card:hover .benefit-icon {
+    transform: scale(1.1);
+}
+
+.benefit-flip-card:hover .hover-arrow {
+    transform: translateX(5px);
+}
+
+.benefit-flip-card:hover .benefit-hover-indicator {
+    opacity: 1;
+}
+
+
+.benefit-flip-card:focus-within {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 16px;
+}
+
+
+
+
+
+
+
+.impact-journey-container {
+    max-width: 100%;
+}
+
+
+.journey-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.journey-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-heading);
+    margin: 0 0 10px 0;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.journey-subtitle {
+    font-size: 16px;
+    color: var(--color-body);
+    margin: 0;
+    opacity: 0.8;
+}
+
+
+.nodes-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin: 50px 0;
+    padding: 40px 20px;
+}
+
+
+.impact-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    opacity: 0.4;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.impact-node.active {
+    opacity: 1;
+    transform: translateY(-8px);
+}
+
+
+.node-circle {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.node-inner {
+    width: 100%;
+    height: 100%;
+    background: var(--color-white);
+    border: 3px solid var(--color-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: all 0.6s ease;
+}
+
+.impact-node.active .node-inner {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 25px rgba(0, 132, 120, 0.3);
+}
+
+.node-icon {
+    font-size: 28px;
+    color: var(--color-body);
+    transition: all 0.6s ease;
+}
+
+.impact-node.active .node-icon {
+    color: var(--color-white);
+    transform: scale(1.1);
+}
+
+
+.node-pulse {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: none;
+}
+
+.impact-node.active .node-pulse {
+    animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+
+.node-label {
+    text-align: center;
+    min-height: 80px;
+}
+
+.node-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin: 0 0 5px 0;
+    transition: color 0.6s ease;
+}
+
+.impact-node.active .node-title {
+    color: var(--color-primary);
+}
+
+.node-description {
+    font-size: 13px;
+    color: var(--color-body);
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.node-counter {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-primary);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.6s ease;
+}
+
+.impact-node.active .node-counter {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.counter-suffix {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+.connection-line {
+    flex: 1;
+    height: 4px;
+    background: var(--color-border);
+    position: relative;
+    margin: 0 -10px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+
+.energy-flow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--color-primary) 30%, 
+        var(--color-secondary) 70%, 
+        transparent 100%);
+    border-radius: 2px;
+    transition: all 0.8s ease;
+}
+
+.connection-line.active .energy-flow {
+    animation: energy-flow 1.5s ease-in-out;
+}
+
+@keyframes energy-flow {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+
+.connection-dots {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.connection-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--color-border);
+    border-radius: 50%;
+    opacity: 0.3;
+    transition: all 0.4s ease;
+}
+
+.connection-line.active .connection-dot {
+    background: var(--color-primary);
+    opacity: 1;
+    animation: dot-pulse 0.6s ease;
+}
+
+.connection-line.active .dot-1 {
+    animation-delay: 0.2s;
+}
+
+.connection-line.active .dot-2 {
+    animation-delay: 0.4s;
+}
+
+.connection-line.active .dot-3 {
+    animation-delay: 0.6s;
+}
+
+@keyframes dot-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+        box-shadow: 0 0 10px var(--color-primary);
+    }
+}
+
+
+.journey-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid var(--color-border);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--color-body);
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+
+@media (max-width: 768px) {
+    .benefits-cards-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .benefit-flip-card {
+        height: 290px;
+    }
+    
+    
+    
+    .journey-title {
+        font-size: 24px;
+    }
+    
+    .nodes-container {
+        flex-direction: column;
+        gap: 40px;
+        padding: 20px;
+    }
+    
+    .connection-line {
+        width: 4px;
+        height: 60px;
+        margin: -15px 0;
+    }
+    
+    .energy-flow {
+        width: 100%;
+        height: 30%;
+        top: -100%;
+        left: 0;
+    }
+    
+    .connection-line.active .energy-flow {
+        animation: energy-flow-vertical 1.5s ease-in-out;
+    }
+    
+    @keyframes energy-flow-vertical {
+        0% {
+            top: -100%;
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+        }
+        80% {
+            opacity: 1;
+        }
+        100% {
+            top: 100%;
+            opacity: 0;
+        }
+    }
+    
+    .connection-dots {
+        flex-direction: column;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .journey-stats {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .benefit-card-wrapper,
+    .impact-node,
+    .energy-flow,
+    .connection-dot,
+    .node-counter {
+        transition: none;
+        animation: none;
+    }
+    
+    .node-pulse {
+        animation: none;
+    }
+}
+
+
+.impact-journey-section {
+    margin-top: 40px;
+    padding: 0;
+    background: transparent;
+}
+
+
+.node-label {
+    text-align: center;
+    min-height: 50px; 
+}
+
+

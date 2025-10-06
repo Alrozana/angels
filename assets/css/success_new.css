@@ -1,0 +1,524 @@
+.success-story-section {
+    background: #efefef;
+    padding: 100px 0;
+}
+
+
+.success-story-card {
+    background: var(--color-white);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.success-story-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px; /* عدل الارتفاع حسب الحاجة */
+  background: url("../images/Tat.png") repeat-x bottom center;
+  background-size: auto 100%; 
+  border-bottom-left-radius: 24px; /* نفس انحناء الكارد */
+  border-bottom-right-radius: 24px;
+}
+.success-story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+}
+
+
+.company-header-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 50px;
+    background: linear-gradient(135deg, #f0f2f5 0%, #f0f2f5 50%);
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+}
+
+/* Top decorative strip using Tatreez image */
+.company-header-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 18px;                 /* عدّلها 14–22px حسب ما يلزم */
+  background:
+    linear-gradient(to bottom, rgba(0,132,120,.15), rgba(0,132,120,.15)),
+    url("../images/Tat.png") repeat-x top center;
+  background-size: 100% 100%, auto 100%;
+}
+
+
+.company-logo-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 3px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+
+.company-logo-container:hover {
+    border-color: var(--color-primary);
+    transform: scale(1.05);
+}
+
+.company-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.company-basic-info {
+    flex: 1;
+    margin-left: 25px;
+}
+
+.company-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--color-heading);
+    margin: 0 0 8px 0;
+}
+
+.company-industry {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.company-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-body);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.company-location i {
+    color: var(--color-primary);
+}
+
+.success-badge {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(0, 132, 120, 0.3);
+}
+
+
+.story-main-content {
+    padding: 50px;
+}
+
+.story-subtitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.story-description {
+    font-size: 16px;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+.story-description p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-body);
+    text-align: justify;
+    margin: 0;
+}
+
+
+.growth-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.growth-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 25px;
+    background: var(--color-lightest);
+    border-radius: 16px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.growth-item:hover {
+    border-color: var(--color-primary);
+    background: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 132, 120, 0.15);
+}
+
+.growth-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: 20px;
+}
+
+.growth-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.growth-number {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--color-heading);
+    line-height: 1;
+}
+
+.growth-label {
+    font-size: 14px;
+    color: var(--color-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+.founder-testimonial-section {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    padding: 50px;
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.founder-testimonial-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.founder-testimonial-section::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 160px;
+    height: 160px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.testimonial-content {
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.quote-icon-container {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.testimonial-quote-icon {
+    
+    font-size: 36px;
+    opacity: 0.8;
+}
+
+.testimonial-quote {
+    color: #f8f9fa;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;   /* بدل center */
+    font-style: italic;
+    margin: 0;
+    position: relative;
+}
+
+
+.founder-info-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.founder-avatar-container {
+    position: relative;
+}
+
+.founder-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.founder-badge {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 30px;
+    height: 30px;
+    background: var(--color-white);
+    color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.founder-details {
+    flex: 1;
+    margin-left: 25px;
+    text-align: left;
+}
+
+.founder-name {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.founder-position {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 3px;
+    font-weight: 500;
+}
+
+.founder-company {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.testimonial-rating {
+    text-align: center;
+}
+
+.rating-stars {
+    margin-bottom: 8px;
+}
+
+.rating-stars i {
+    color: #ffd700;
+    font-size: 18px;
+    margin: 0 2px;
+}
+
+.rating-text {
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+
+.story-cta-section {
+    background: var(--color-lightest);
+    padding: 40px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--color-border);
+}
+
+.cta-text-content {
+    flex: 1;
+}
+
+.cta-heading {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin: 0 0 8px 0;
+}
+
+.cta-subtext {
+    color: var(--color-body);
+    margin: 0;
+    font-size: 16px;
+}
+
+.cta-button-container {
+    margin-left: 30px;
+}
+
+.success-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 132, 120, 0.3);
+    position: relative;    /* مهم */
+    overflow: hidden;      /* عشان ما يطلع الافتر برا */
+    z-index: 1;
+}
+.success-cta-btn:hover::after {
+    height: 100%;
+}
+.success-cta-btn::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 0; /* يبدأ مخفي */
+    border-radius: 50px;
+    z-index: -1;
+
+    /* نفس الفكرة: صورة + لون overlay شفاف */
+    background-image: 
+      linear-gradient(rgba(11, 65, 108, 0.6), rgba(11, 65, 108, 0.6)), 
+      url("../images/bu.png");
+    background-size: contain;
+    background-repeat: repeat-x;
+    background-position: center;
+
+    transition: all 0.3s ease;
+}
+.success-cta-btn:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 132, 120, 0.4);
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.success-cta-btn i {
+    transition: transform 0.3s ease;
+}
+
+.success-cta-btn:hover i {
+    transform: translateX(5px);
+}
+
+
+@media (max-width: 1024px) {
+    .growth-indicators {
+        gap: 30px;
+    }
+    
+    .growth-item {
+        min-width: 130px;
+        padding: 18px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .story-main-content,
+    .founder-testimonial-section,
+    .story-cta-section {
+        padding: 30px 25px;
+    }
+    .testimonial-quote {
+      text-align: justify;
+  }
+    .company-header-section {
+        padding: 30px 25px;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .company-basic-info {
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    .growth-indicators {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .growth-item {
+        min-width: 200px;
+    }
+    
+    .founder-info-section {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .founder-details {
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    .story-cta-section {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .cta-button-container {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .company-title {
+        font-size: 24px;
+    }
+    
+    .story-subtitle {
+        font-size: 20px;
+    }
+    .story-description {
+    font-size: 14px;
+    
+}
+    
+    .success-story-section .story-description p {
+        font-size: 14px !important;
+        text-align: justify !important;
+    }
+
+    
+    .testimonial-quote {
+        font-size: 14px;
+    }
+    
+    .cta-heading {
+        font-size: 20px;
+    }
+}
